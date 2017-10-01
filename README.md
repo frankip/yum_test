@@ -14,6 +14,20 @@
 
     ``` pip install -r requirements.txt```
 
+* Install postgress
+
+* configure Postgres
+    ```sudo su potgres```
+    ```createdb mydb```
+    ```createuser -P```
+    ```psql```
+
+* finally
+    ```GRANT ALL PRIVILEGES ON DATABASE mydb TO myuser;```
+
+
+
+
 * run the server
 
     ```python manage.py runserver```
