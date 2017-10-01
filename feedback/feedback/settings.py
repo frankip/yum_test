@@ -37,8 +37,19 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # dajngo all-auth
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    
+    # in apps
     'feedform',
+
 ]
+
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -100,6 +111,35 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTHENTICATION_BACKENDS = (
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
+
+ACCOUNT_AUTHENTICATION_METHOD = "username_email"
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = "none"
+# redirect to login
+
+LOGIN_URL = '/accounts/login/'
+# LOGIN_URL = "/login/"
+
+
+# redirect to home
+LOGIN_REDIRECT_URL = '/'
+ACCOUNT_LOGOUT_ON_GET = True
+# When signing up, let the user type in their password twice to avoid typ-o's.
+ACCOUNT_SIGNUP_PASSWORD_VERIFICATION = True
+# Enforce uniqueness of e-mail addresses.
+ACCOUNT_UNIQUE_EMAIL = True
+
+ACCOUNT_FORMS = {
+    'login': 'feedform.forms.NewLoginForm',
+    'reset_password' : 'feedform.forms.NewResetPasswordForm'
+    }
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/

@@ -30,27 +30,28 @@ def read_csv_data():
         '''
         max_value = max(total_biomas)
         max_index_value = total_biomas.index(max_value)
-        # print(names[max_index_value])
+        print("The farmer with the highest biomas Fwt is {}".format(names[max_index_value]))
 
         '''
         find the Min value and the index
-        and extract the name from the list
-        '''
+        and extract the name from the list'''
+
         min_value = min(total_biomas)
         min_index_value = total_biomas.index(min_value)
-        # print(names[min_index_value])
+        print("The farmer with the lowest biomas Fwt is {}" .format(names[min_index_value]))
 
 
         '''
         sorted harvesting date
         '''
-        # print(sorted(harversting_date))
+        print(sorted(harversting_date))
+
 
         '''
-        avarage
+        avarage of harvest plants
         '''
-        print(sum(harvest_plants))
-        
-
+        harvest = list(map(int, harvest_plants))
+        avarage  = (sum(harvest)/float (len(harvest)))
+        print("The avarage of No of plants is{}".format(avarage))
 
 read_csv_data()
