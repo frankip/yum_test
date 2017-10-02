@@ -41,9 +41,7 @@ INSTALLED_APPS = [
     # dajngo all-auth
     'django.contrib.sites',
     'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
-    
+
     # in apps
     'feedform',
 

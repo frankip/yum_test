@@ -1,11 +1,13 @@
 from django.shortcuts import render, redirect
-
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import Group, User
 from django.contrib.auth import authenticate, login
 
 from .models import Details
 from .forms import FeedBackForm
+
+
+
 
 # Create your views here.
 @login_required
@@ -30,3 +32,4 @@ def add_details(request):
         'form':form
     }
     return render(request, 'feedback/form.html', ctx)
+
