@@ -14,7 +14,7 @@ def list_details(request):
     ctx = {
         'instance': instance
     }
-    return render(request, 'index.html', ctx)
+    return render(request, 'feedback/index.html', ctx)
 
 @login_required
 def add_details(request):
@@ -29,4 +29,4 @@ def add_details(request):
     ctx = {
         'form':form
     }
-    return render(request, 'form.html', ctx)
+    return render(request, 'feedback/form.html', ctx)

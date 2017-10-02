@@ -1,0 +1,14 @@
+{% extends 'feedback/base.html' %}
+{% load staticfiles %}
+{% block content %}
+<div class="row">
+	{% for item in instance %}
+	<ul>
+		<h3>{{ item.user }}</h3>
+
+	</ul>
+			
+		{% endfor %}
+</div>
+
+{% endblock content %}

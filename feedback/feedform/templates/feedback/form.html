@@ -1,10 +1,19 @@
-{% extends 'base.html' %}
+{% extends 'feedback/base.html' %}
 {% load staticfiles %}
 {% block content %}
+
 <div class="row">
+	<div class="large-up-2">
+	<div class="column offset-5">
 	<form method="POST">{% csrf_token %}
-	{{ form.as_p }}		
+			<div class="grid-x grid-padding-x">
+	{{ form.as_p }}
 	<button type="submit" class="button">save</button>
+	</div>
+	</div>
+	
 	</form>	
+	</div>
+	</div>
 </div>
 {% endblock content %}

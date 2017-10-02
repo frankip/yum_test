@@ -34,23 +34,8 @@ class NewResetPasswordForm(ResetPasswordForm):
 class FeedBackForm(forms.ModelForm):
 	class Meta:
 		model= Details
-		RATING_CHOICES = (
-			(1, '1'),
-			(2, '2'),
-			(3, '3'),
-			(4, '4'),
-			(5, '5'),
-		)
-		neighbourhood_name = (
-				('nairobi', 'nairobi'),
-				('westlands','westlands'),
-				('langata','langata'),
-				('muthaiga','muthaiga'),
-				('thika','thika')
-		)
+
 		phone_number = forms.NumberInput(attrs={'minlength': 10, 'maxlength': 15, 'required': True}),
-		rating = forms.ChoiceField(choices = RATING_CHOICES),
-		neighbourhood = forms.ChoiceField(choices = neighbourhood_name),
 		comments = forms.CharField()
 		fields= [
 			'user',
